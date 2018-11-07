@@ -12,11 +12,23 @@
 <body>
 
 <div id="app">
-	<v-formulario></formulario>
+	<form>
+		<v-formulario></v-formulario>
+	</form>
 </div>
 
 <script type="text/javascript">
-
+//todo
+//definir un agrupador de campos (un hijo de formulario?)
+//agregar un manejador de atajos de teclado para brincar entre campos
+//agregar campo de tipo archivo/imagen
+//crear un validador y poder pasarlo como parametro a los campos
+//perfeccionar botones (hacer que naveguen)
+//construir componente que autocomplete con base en consulta a servicio rest
+//construir manejador de ruteo, para cambiar entre formulario (tipo jquery steps)
+//construir manejador que envie la informacion del formulario a servicio rest
+//construir tabla que despliegue datos recibidos desde servicio rest, que incluya paginacion y otras monerias
+//construir herramienta de linea de comandos (tipo artisan) que genere los machotes de formulario con base en estructura de servicio rest (usar principios restful)
 
 
 //Clase Campo
@@ -196,6 +208,16 @@ CampoColor.prototype=Object.create(Campo.prototype)
 CampoColor.prototype.constructor=CampoColor
 //Clase CampoColor FIN
 
+//Clase Boton
+var Boton=function(parametros){
+	Campo.call(this,parametros);
+	this.nombre="vBoton"
+	this.template=`<b-button type="button" variant="primary">Submit</b-button>`
+}
+Boton.prototype=Object.create(Campo.prototype)
+Boton.prototype.constructor=Boton
+//Clase Boton FIN
+
 //Clase Formulario
 var Formulario=function(parametros){
 	this.campos=parametros.campos
@@ -218,7 +240,7 @@ var Formulario=function(parametros){
 			<!-- vFormulario INICIO -->
 			<b-container>
 				<template v-for="campo in campos">
-					<component :is="campo.nombre" :hey="campo.UUID" :parametros="campo" v-on:change="dispararEvento(campo,$event)"></component>
+					<component :is="campo.nombre" :key="campo.UUID" :parametros="campo" v-on:change="dispararEvento(campo,$event)"></component>
 				</template>
 			</b-container>
 			<!-- vFormulario FIN -->
@@ -240,11 +262,7 @@ Formulario.prototype.obtenerComponente=function(){
 }
 //Clase Formulario FIN
 
-//todo
-//definir un agrupador de campos (un hijo de formulario?)
-//agregar un manejador de atajos de teclado para brincar entre campos
-//agregar campo de tipo archivo/imagen
-//crear un validador y poder pasarlo como parametro a los campos
+
 /*
 var campos=[
   	new CampoTexto().asignaEtiqueta("texto").asignaValor("asd").asignaEvento("cambiotexto"),
@@ -271,7 +289,8 @@ var campos=[
 	new CampoTexto({etiqueta:"Colonia"}),	
 	new CampoTexto({etiqueta:"País"}),	
 	new CampoTexto({etiqueta:"Nombre"}),	
-	new CampoTexto({etiqueta:"Correo electrónico"})
+	new CampoTexto({etiqueta:"Correo electrónico"}),
+	new Boton({etiqueta:"Guardar"})
 ]
 vFormulario=new Formulario({campos}).obtenerComponente();
 var app = new Vue({
