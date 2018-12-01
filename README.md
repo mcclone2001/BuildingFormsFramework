@@ -2,6 +2,33 @@
 
 > a framework to build spa with forms in bootstrap view
 
+###TO DO
+- [ ] Desglosar clase Props en multiples clases dentro de una carpeta para poder importarse como coleccion de clases
+- [ ] Extraer tablas de mapeo a archivos independientes
+- [ ] Crear coleccion de clases para los componentes vue
+- [ ] Hacer que el objeto de components del form se llene con un foreach que recorra la coleccion de clases de los componentes de vue
+
+- [ ] Expandir JSON de definicion de formularios (echar un ojo a XMLForms)
+- [ ] Definir JSON para describir la interaccion entre los formularios
+- [ ] Hacer un editor visual para la creacion de los formularios
+
+###Glosario
+Un PROCESO se describe por DOCUMENTOS, su flujo(requisitos para activar el siguiente paso del proceso) y los ACTORES que INTERACTUAN con cada DOCUMENTO
+	Los ACTORES son los usuarios, sistemas externos, y otros que interactuan con el sistema
+	Las INTERACCIONES son VER, ELABORAR, REVISAR, AUTORIZAR
+
+Un DOCUMENTO se divide en FORMATO y REGISTRO
+
+
+El FORMATO se divide en su REPRESENTACION VISUAL y en sus RESTRICCIONES
+
+El FORMATO se compone de CAMPOS y define el flujo(requisitos para activar el siguiente paso del proceso) y los ACTORES que INTERACTUAN con cada CAMPO
+
+
+Un FORMATO se define en un JSON, el JSON se encapsula en una CLASE DE DATOS, la clase de datos se usa para crear un COMPONENTE
+
+JSon > Clase de Datos > Componente
+
 ## Build Setup
 
 ``` bash
