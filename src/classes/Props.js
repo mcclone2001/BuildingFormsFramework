@@ -13,7 +13,7 @@ const CrearCamposDesdeJSON = function (jsonCampos) {
   return campos
 }
 
-//TO DO: Extraer todas las clases de datos a archivos y ponerlos en la misma carpeta para importarlos como coleccion
+// TO DO: Extraer todas las clases de datos a archivos y ponerlos en la misma carpeta para importarlos como coleccion
 
 const DataElemento = function (parametros) {
   this.etiqueta = parametros ? this.codificarEntidadesHTML(parametros.etiqueta) : undefined
