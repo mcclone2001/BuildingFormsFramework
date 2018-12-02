@@ -2,7 +2,7 @@
 
 > a framework to build spa with forms in bootstrap view
 
-###TO DO
+### TO DO
 - [ ] Desglosar clase Props en multiples clases dentro de una carpeta para poder importarse como coleccion de clases
 - [ ] Extraer tablas de mapeo a archivos independientes
 - [ ] Crear coleccion de clases para los componentes vue
@@ -12,7 +12,7 @@
 - [ ] Definir JSON para describir la interaccion entre los formularios
 - [ ] Hacer un editor visual para la creacion de los formularios
 
-###Glosario
+### Glosario
 Un PROCESO se describe por DOCUMENTOS, su flujo(requisitos para activar el siguiente paso del proceso) y los ACTORES que INTERACTUAN con cada DOCUMENTO
 	Los ACTORES son los usuarios, sistemas externos, y otros que interactuan con el sistema
 	Las INTERACCIONES son VER, ELABORAR, REVISAR, AUTORIZAR
