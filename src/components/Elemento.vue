@@ -20,7 +20,7 @@ export default{
   methods: {
     generarUUID: function () {
       //  https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-      console.log('generando un uuid para ' + this.etiqueta)
+      // console.log('generando un uuid para ' + this.etiqueta)
       var d = new Date().getTime()
       if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
         d += performance.now() //  use high-precision timer if available
@@ -30,7 +30,7 @@ export default{
         d = Math.floor(d / 16)
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
       })
-      console.log(uuid)
+      // console.log(uuid)
       return uuid
     },
 

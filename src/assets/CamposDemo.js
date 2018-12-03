@@ -1,4 +1,4 @@
-import TipoDeCampo from '@/classes/TipoDeCampo'
+import TipoDeCampo from '@/classes/catalogs/TipoDeCampo'
 
 export const CamposDemo = [
   {

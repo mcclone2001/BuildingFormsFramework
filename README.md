@@ -3,10 +3,10 @@
 > a framework to build spa with forms in bootstrap view
 
 ## TO DO
-- [ ] Desglosar clase Props en multiples clases dentro de una carpeta para poder importarse como coleccion de clases
-- [ ] Extraer tablas de mapeo a archivos independientes
-- [ ] Crear coleccion de clases para los componentes vue
-- [ ] Hacer que el objeto de components del form se llene con un foreach que recorra la coleccion de clases de los componentes de vue
+- [X] Desglosar clase Props en multiples clases dentro de una carpeta para poder importarse como coleccion de clases
+- [X] Extraer tablas de mapeo a archivos independientes
+- [X] Crear coleccion de clases para los componentes vue
+- [X] Hacer que el objeto de components del form se llene con un foreach que recorra la coleccion de clases de los componentes de vue (al final simplemente usamos ComponentesCollection, es necesario optimizarlo para solo cargar los componentes que son necesarios de acuerdo a la propiedad campos)
 
 - [ ] Expandir JSON de definicion de formularios (echar un ojo a XMLForms)
 - [ ] Definir JSON para describir la interaccion entre los formularios
