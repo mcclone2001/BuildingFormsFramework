@@ -24,7 +24,7 @@ let data = function () {
 
 export default {
   name: 'Form',
-  components: Components, //TO DO - Analizar que componentes son necesarios de acuerdo a la propiedad campos y filtrar que solo esos se carguen
+  components: Components, // TO DO - Analizar que componentes son necesarios de acuerdo a la propiedad campos y filtrar que solo esos se carguen
   props: [
     'titulo',
     'campos'
