@@ -41,6 +41,11 @@ export default{
       })
       return encodedStr
     }
+  },
+  watch: {
+    'etiqueta' (to, from) {
+      this.d_etiqueta = this.etiqueta
+    }
   }
 }
 </script>
