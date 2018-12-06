@@ -29,6 +29,17 @@ export default {
       d_incremento: this.incremento
     }
   },
+  watch: {
+    valorMinimo (to, from) {
+      this.d_valorMinimo = to
+    },
+    valorMaximo (to, from) {
+      this.d_valorMaximo = to
+    },
+    incremento (to, from) {
+      this.d_incremento = to
+    }
+  },
   components: { Contenedor }
 }
 </script>

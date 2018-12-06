@@ -1,34 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Hello from '@/components/Hello'
 import Form from '@/components/Form'
-import * as Props from '@/classes/Props'
-// import { CamposDemo } from '@/assets/CamposDemo'
+import InterpreteJSON from '@/classes/InterpreteJSON'
 import FormulariosDemo from '@/assets/FormulariosDemo'
 
 Vue.use(Router)
 
-/*
-var campos = Props.CrearCamposDesdeJSON(CamposDemo)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Form',
-      component: Form,
-      props: function (route) {
-        return {
-          titulo: 'El Titulo',
-          campos
-        }
-      }
-    }
-  ]
-})
-*/
-
 var rutas = construirRutas(FormulariosDemo)
+var interpreteJSON = new InterpreteJSON()
+
+function construirRutas (definicionDeRutas) {
+  var rutas = []
+  definicionDeRutas.forEach(function (definicionDeFormulario) {
+    this.rutas.push(this.construirRuta(definicionDeFormulario))
+  }, { rutas, construirRuta })
+  return rutas
+}
 
 function construirRuta (definicionDeFormulario) {
   var ruta = {}
@@ -41,18 +28,10 @@ function construirRuta (definicionDeFormulario) {
   return ruta
 }
 
-function construirRutas (definicionDeRutas) {
-  var rutas = []
-  definicionDeRutas.forEach(function (definicionDeFormulario) {
-    this.rutas.push(this.construirRuta(definicionDeFormulario))
-  }, { rutas, construirRuta })
-  return rutas
-}
-
 const construirFormulario = function (definicionDeFormulario) {
   var formulario = {}
   formulario.titulo = definicionDeFormulario.titulo
-  formulario.campos = Props.CrearCamposDesdeJSON(definicionDeFormulario.campos)
+  formulario.campos = interpreteJSON.CrearCamposDesdeJSON(definicionDeFormulario.campos)
   return formulario
 }
 

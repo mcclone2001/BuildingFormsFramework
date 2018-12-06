@@ -6,6 +6,7 @@
             :key="campo.UUID" 
             :parametros="campo" 
             v-bind="campo"
+            v-model="campo.valor"
             v-on:change="dispararEvento(campo,$event)"></component>
     </template>
   </Contenedor>
@@ -31,14 +32,21 @@ export default {
     'campos'
   ],
   data: data,
+  methods: {
+    dispararEvento: function (campo, evento) {
+      console.log(campo.valor, evento)
+      console.log(this.d_campos)
+    }
+  },
   watch: {
     // https://stackoverflow.com/questions/42133894/vue-js-how-to-properly-watch-for-nested-data/42134176
     // ten ese articulo en consideracion cuando uses objetos mas profundos
 
-    // este componente se reusa al navegar entre formularios, por eso debemos estar pendientes de la propiedad route
-    '$route' (to, from) {
-      this.d_titulo = this.titulo
-      this.d_campos = this.campos
+    titulo (to, from) {
+      this.d_titulo = to
+    },
+    campos (to, from) {
+      this.d_campos = to
     }
   }
 }

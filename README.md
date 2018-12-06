@@ -3,12 +3,12 @@
 > a framework to build spa with forms in bootstrap view
 
 ## TO DO
-- [ ] Renombrar/refactorizar classes/Props a algo mas apropiado
-- [ ] Verificar que todos los componentes tengan watchers porque VUE los reusa por eficiencia?
 - [ ] Hacer que la carga de los formularios pueda ocurrir de forma asincrona y que se vayan cacheando en memoria
 - [ ] Expandir JSON de definicion de formularios (echar un ojo a XMLForms)
 - [ ] Definir JSON para describir la interaccion entre los formularios
 - [ ] Hacer un editor visual para la creacion de los formularios
+- [X] Renombrar/refactorizar classes/Props a algo mas apropiado (InterpreteJSON)
+- [X] Verificar que todos los componentes tengan watchers porque VUE los reusa por eficiencia
 - [X] Desglosar clase Props en multiples clases dentro de una carpeta para poder importarse como coleccion de clases
 - [X] Extraer tablas de mapeo a archivos independientes
 - [X] Crear coleccion de clases para los componentes vue
