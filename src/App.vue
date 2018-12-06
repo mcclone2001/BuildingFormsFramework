@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <router-link to="/wysiwyg">WYSIWYG</router-link>
     <router-link to="/">Cliente</router-link>
     <router-link to="/empleado">Empleado</router-link>
     <router-link to="/usuario">Usuario</router-link>

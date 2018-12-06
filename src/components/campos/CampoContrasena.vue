@@ -1,7 +1,7 @@
 <template>
   <Contenedor :etiqueta="etiqueta">
     <b-form-input
-      type="date"
+      type="password"
       v-model="d_valor"
       v-on:change="dispararEvento">
     </b-form-input>
@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import Campo from '@/components/Campo'
-import Contenedor from '@/components/Contenedor'
+import Campo from '@/components/campos/Campo'
+import Contenedor from '@/components/campos/Contenedor'
 export default {
-  name: 'CampoFecha',
+  name: 'CampoContrasena',
   mixins: [ Campo ],
   components: { Contenedor }
 }

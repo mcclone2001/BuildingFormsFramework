@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import * as Components from '@/components/ComponentsCollection'
+import * as Campos from '@/components/CamposCollection'
 import MapeoNombreClaseDeDatosANombreComponente from '@/classes/catalogs/MapeoNombreClaseDeDatosANombreComponente'
 
 let data = function () {
@@ -26,7 +26,7 @@ let data = function () {
 
 export default {
   name: 'Form',
-  components: Components, // TO DO - Analizar que componentes son necesarios de acuerdo a la propiedad campos y filtrar que solo esos se carguen
+  components: Campos, // TO DO - Analizar que componentes son necesarios de acuerdo a la propiedad campos y filtrar que solo esos se carguen
   props: [
     'titulo',
     'campos'

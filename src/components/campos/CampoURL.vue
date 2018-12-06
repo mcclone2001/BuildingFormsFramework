@@ -1,7 +1,7 @@
 <template>
   <Contenedor :etiqueta="etiqueta">
     <b-form-input
-      type="color"
+      type="url"
       v-model="d_valor"
       v-on:change="dispararEvento">
     </b-form-input>
@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import Campo from '@/components/Campo'
-import Contenedor from '@/components/Contenedor'
+import Campo from '@/components/campos/Campo'
+import Contenedor from '@/components/campos/Contenedor'
 export default {
-  name: 'CampoColor',
+  name: 'CampoURL',
   mixins: [ Campo ],
   components: { Contenedor }
 }

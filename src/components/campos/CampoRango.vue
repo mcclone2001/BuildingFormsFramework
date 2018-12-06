@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Campo from '@/components/Campo'
-import Contenedor from '@/components/Contenedor'
+import Campo from '@/components/campos/Campo'
+import Contenedor from '@/components/campos/Contenedor'
 export default {
   name: 'CampoRango',
   mixins: [ Campo ],

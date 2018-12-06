@@ -1,5 +1,5 @@
 <script>
-  import Elemento from '@/components/Elemento'
+  import Elemento from '@/components/campos/Elemento'
   export default {
     name: 'Campo',
     mixins: [Elemento],

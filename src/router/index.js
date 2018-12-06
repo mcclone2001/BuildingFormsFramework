@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Form from '@/components/Form'
+import WYSIWYG from '@/components/Editor'
+
 import InterpreteJSON from '@/classes/InterpreteJSON'
 import FormulariosDemo from '@/assets/FormulariosDemo'
 
@@ -8,6 +11,12 @@ Vue.use(Router)
 
 var rutas = construirRutas(FormulariosDemo)
 var interpreteJSON = new InterpreteJSON()
+
+rutas.push({
+  path: '/wysiwyg',
+  name: 'Editor WYSIWYG',
+  component: WYSIWYG
+})
 
 function construirRutas (definicionDeRutas) {
   var rutas = []
