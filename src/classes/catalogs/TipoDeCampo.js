@@ -3,7 +3,7 @@ export default {
   CAMPO: 'Campo',
   CAMPO_TEXTO: 'CampoTexto',
   CAMPO_RANGO: 'CampoRango',
-  CAMPO_CONTRASENA: 'CampoContraseña',
+  CAMPO_CONTRASENA: 'CampoContrasena',
   CAMPO_CORREO: 'CampoCorreo',
   CAMPO_NUMERO: 'CampoNumero',
   CAMPO_URL: 'CampoURL',

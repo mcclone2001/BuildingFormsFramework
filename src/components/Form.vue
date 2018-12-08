@@ -2,7 +2,7 @@
   <Contenedor :etiqueta="d_titulo">
     <template v-for="campo in d_campos">
           <component 
-            :is="MapeoNombreClaseDeDatosANombreComponente[campo.constructor.name]" 
+            :is="obtenerNombreDeComponente(campo.constructor.name)" 
             :key="campo.UUID" 
             :parametros="campo" 
             v-bind="campo"
@@ -34,8 +34,9 @@ export default {
   data: data,
   methods: {
     dispararEvento: function (campo, evento) {
-      console.log(campo.valor, evento)
-      console.log(this.d_campos)
+    },
+    obtenerNombreDeComponente (nombreDeComponente) {
+      return MapeoNombreClaseDeDatosANombreComponente[nombreDeComponente]
     }
   },
   watch: {

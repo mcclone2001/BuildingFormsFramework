@@ -32,16 +32,9 @@ function construirRuta (definicionDeFormulario) {
   ruta.name = definicionDeFormulario.titulo
   ruta.component = Form
   ruta.props = function (route) {
-    return construirFormulario(definicionDeFormulario)
+    return interpreteJSON.ConstruirFormulario(definicionDeFormulario)
   }
   return ruta
-}
-
-const construirFormulario = function (definicionDeFormulario) {
-  var formulario = {}
-  formulario.titulo = definicionDeFormulario.titulo
-  formulario.campos = interpreteJSON.CrearCamposDesdeJSON(definicionDeFormulario.campos)
-  return formulario
 }
 
 export default new Router({

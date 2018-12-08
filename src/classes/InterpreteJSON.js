@@ -13,4 +13,12 @@ export default class {
     }, this)
     return campos
   }
+
+  ConstruirFormulario (definicionDeFormulario) {
+    var formulario = {}
+    formulario.titulo = definicionDeFormulario.titulo
+    formulario.campos = this.CrearCamposDesdeJSON(definicionDeFormulario.campos)
+    return formulario
+  }
+
 }
