@@ -93,10 +93,10 @@
     methods: {
       agregarCampo: function () {
         var tipo = this.d_tipo_de_nuevo_componente
-        var nombre = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.nombre === 'nombre' }).valor
-        var etiqueta = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.nombre === 'etiqueta' }).valor
-        var evento = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.nombre === 'evento' }).valor
-        var valor = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.nombre === 'valor' }).valor
+        var nombre = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'nombre' }).parametros.valor
+        var etiqueta = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'etiqueta' }).parametros.valor
+        var evento = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'evento' }).parametros.valor
+        var valor = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'valor' }).parametros.valor
         this.d_formulario.campos.push({
           tipo,
           parametros: {

@@ -4,9 +4,8 @@
           <component 
             :is="obtenerNombreDeComponente(campo.constructor.name)" 
             :key="campo.UUID" 
-            :parametros="campo" 
-            v-bind="campo"
-            v-model="campo.valor"
+            v-bind="campo.parametros"
+            v-model="campo.parametros.valor"
             v-on:change="dispararEvento(campo,$event)"></component>
     </template>
   </Contenedor>

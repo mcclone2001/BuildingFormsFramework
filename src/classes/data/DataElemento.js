@@ -1,5 +1,8 @@
-const DataElemento = function (parametros) {
-  this.etiqueta = parametros ? this.codificarEntidadesHTML(parametros.etiqueta) : undefined
+import TipoDeCampo from '@/classes/catalogs/TipoDeCampo'
+const DataElemento = function (definicion) {
+  this.parametros = {}
+  this.parametros.etiqueta = definicion ? this.codificarEntidadesHTML(definicion.parametros.etiqueta) : undefined
+  this.tipo = TipoDeCampo.ELEMENTO
 }
 DataElemento.prototype.codificarEntidadesHTML = function (cadena) {
   // https://stackoverflow.com/questions/18749591/encode-html-entities-in-javascript
