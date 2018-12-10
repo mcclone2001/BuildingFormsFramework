@@ -93,10 +93,10 @@
     methods: {
       agregarCampo: function () {
         var tipo = this.d_tipo_de_nuevo_componente
-        var nombre = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'nombre' }).parametros.valor
-        var etiqueta = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'etiqueta' }).parametros.valor
-        var evento = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'evento' }).parametros.valor
-        var valor = this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.parametros.nombre === 'valor' }).parametros.valor
+        var nombre = this.obtenerCampoDeNombre('nombre').obtenerValor()
+        var etiqueta = this.obtenerCampoDeNombre('etiqueta').obtenerValor()
+        var evento = this.obtenerCampoDeNombre('evento').obtenerValor()
+        var valor = this.obtenerCampoDeNombre('valor').obtenerValor()
         this.d_formulario.campos.push({
           tipo,
           parametros: {
@@ -107,6 +107,9 @@
           }
         })
         this.d_objeto_formulario = interpreteJSON.ConstruirFormulario(this.d_formulario)
+      },
+      obtenerCampoDeNombre: function (nombre) {
+        return this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.obtenerNombre() === nombre })
       },
       definirTipoDeNuevoComponente: function (tipo) {
         this.d_tipo_de_nuevo_componente = tipo

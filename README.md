@@ -5,6 +5,9 @@
 ## TO DO
 - [ ] Hacer un editor visual para la creacion de los formularios
 	- [ ] Refactorizar el editor para hacer codigo limpio
+		- [ ] Crear DataForm
+		- [ ] Definir formularios para agregar campo para cada tipo de campo y hacerlo en archivos json que por convencion tengan nombre de archivo igual al tipo de campo
+		- [ ] Que el contenido del popup se actualice dinamicamente
 	- [ ] Crear componentes para edición/visualización de propiedades (que se ajuste a las necesidades de cada campo)
 	- [ ] Refactorizar modal de agregar campo para reusar componentes de edición/visualización de propiedades
 	- [ ] Crear clase abstracta de guardado

@@ -10,5 +10,14 @@ const DataCampo = function (definicion) {
 }
 DataCampo.prototype = Object.create(DataElemento.prototype)
 DataCampo.prototype.constructor = DataCampo
+DataCampo.prototype.obtenerValor = function () {
+  return this.parametros.valor
+}
+DataCampo.prototype.obtenerEvento = function () {
+  return this.parametros.evento
+}
+DataCampo.prototype.obtenerNombre = function () {
+  return this.parametros.nombre
+}
 
 export default DataCampo
