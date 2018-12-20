@@ -1,5 +1,5 @@
 <template>
-  <Contenedor :etiqueta="etiqueta">
+  <Contenedor :etiqueta="d_etiqueta">
     <b-form-input
       type="number"
       v-model="d_valor"

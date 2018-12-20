@@ -24,6 +24,7 @@
 
 <script>
   import TipoDeCampo from '@/classes/catalogs/TipoDeCampo'
+  import DataForm from '@/classes/data/DataForm'
   import Form from '@/components/Form'
   import InterpreteJSON from '@/classes/InterpreteJSON'
 
@@ -35,58 +36,62 @@
       Form
     },
     data: function () {
-      var formularioVacio = {
-        titulo: 'Preview',
-        slug: '',
-        campos: []
-      }
-      var formularioAgregarCampo = {
-        titulo: 'Agregar Campo',
-        slug: '',
-        campos: [
-          {
-            tipo: TipoDeCampo.CAMPO_TEXTO,
-            parametros: {
-              nombre: 'nombre',
-              etiqueta: 'Nombre',
-              evento: 'CambioNombre',
-              valor: ''
+      var formularioVacio = new DataForm({
+        parametros: {
+          etiqueta: 'Preview',
+          nombre: '',
+          campos: []
+        }
+      })
+      var formularioAgregarCampo = new DataForm({
+        parametros: {
+          etiqueta: 'Agregar Campo',
+          nombre: '',
+          campos: [
+            {
+              tipo: TipoDeCampo.CAMPO_TEXTO,
+              parametros: {
+                nombre: 'nombre',
+                etiqueta: 'Nombre',
+                evento: 'CambioNombre',
+                valor: ''
+              }
+            },
+            {
+              tipo: TipoDeCampo.CAMPO_TEXTO,
+              parametros: {
+                nombre: 'etiqueta',
+                etiqueta: 'Etiqueta',
+                evento: 'CambioEtiqueta',
+                valor: ''
+              }
+            },
+            {
+              tipo: TipoDeCampo.CAMPO_TEXTO,
+              parametros: {
+                nombre: 'evento',
+                etiqueta: 'Evento',
+                evento: 'CambioEvento',
+                valor: ''
+              }
+            },
+            {
+              tipo: TipoDeCampo.CAMPO_TEXTO,
+              parametros: {
+                nombre: 'valor',
+                etiqueta: 'Valor',
+                evento: 'CambioValor',
+                valor: ''
+              }
             }
-          },
-          {
-            tipo: TipoDeCampo.CAMPO_TEXTO,
-            parametros: {
-              nombre: 'etiqueta',
-              etiqueta: 'Etiqueta',
-              evento: 'CambioEtiqueta',
-              valor: ''
-            }
-          },
-          {
-            tipo: TipoDeCampo.CAMPO_TEXTO,
-            parametros: {
-              nombre: 'evento',
-              etiqueta: 'Evento',
-              evento: 'CambioEvento',
-              valor: ''
-            }
-          },
-          {
-            tipo: TipoDeCampo.CAMPO_TEXTO,
-            parametros: {
-              nombre: 'valor',
-              etiqueta: 'Valor',
-              evento: 'CambioValor',
-              valor: ''
-            }
-          }
-        ]
-      }
+          ]
+        }
+      })
       return {
         d_campos: TipoDeCampo,
         d_formulario: formularioVacio,
-        d_objeto_formulario: interpreteJSON.ConstruirFormulario(formularioVacio),
-        d_objeto_formulario_agregar_campo: interpreteJSON.ConstruirFormulario(formularioAgregarCampo),
+        d_objeto_formulario: interpreteJSON.ConstruirFormulario(formularioVacio.parametros),
+        d_objeto_formulario_agregar_campo: interpreteJSON.ConstruirFormulario(formularioAgregarCampo.parametros),
         d_tipo_de_nuevo_componente: ''
       }
     },
@@ -97,7 +102,7 @@
         var etiqueta = this.obtenerCampoDeNombre('etiqueta').obtenerValor()
         var evento = this.obtenerCampoDeNombre('evento').obtenerValor()
         var valor = this.obtenerCampoDeNombre('valor').obtenerValor()
-        this.d_formulario.campos.push({
+        this.d_formulario.parametros.campos.push({
           tipo,
           parametros: {
             nombre,
@@ -106,7 +111,7 @@
             valor
           }
         })
-        this.d_objeto_formulario = interpreteJSON.ConstruirFormulario(this.d_formulario)
+        this.d_objeto_formulario = interpreteJSON.ConstruirFormulario(this.d_formulario.parametros)
       },
       obtenerCampoDeNombre: function (nombre) {
         return this.d_objeto_formulario_agregar_campo.campos.find(function (element) { return element.obtenerNombre() === nombre })

@@ -28,7 +28,7 @@ function construirRutas (definicionDeRutas) {
 
 function construirRuta (definicionDeFormulario) {
   var ruta = {}
-  ruta.path = definicionDeFormulario.slug
+  ruta.path = definicionDeFormulario.nombre
   ruta.name = definicionDeFormulario.titulo
   ruta.component = Form
   ruta.props = function (route) {

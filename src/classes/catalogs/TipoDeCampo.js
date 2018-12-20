@@ -11,5 +11,6 @@ export default {
   CAMPO_FECHA: 'CampoFecha',
   CAMPO_HORA: 'CampoHora',
   CAMPO_COLOR: 'CampoColor',
-  BOTON: 'Boton'
+  BOTON: 'Boton',
+  FORMULARIO: 'Formulario'
 }

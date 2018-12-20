@@ -3,7 +3,7 @@ import TipoDeCampo from '@/classes/catalogs/TipoDeCampo'
 export default [
   {
     titulo: 'Registrar Cliente',
-    slug: '/',
+    nombre: '/',
     campos: [
       {
         tipo: TipoDeCampo.CAMPO_TEXTO,
@@ -36,7 +36,7 @@ export default [
   },
   {
     titulo: 'Empleado',
-    slug: '/empleado',
+    nombre: '/empleado',
     campos: [
       {
         tipo: TipoDeCampo.CAMPO_TEXTO,
@@ -69,7 +69,7 @@ export default [
   },
   {
     titulo: 'Usuario',
-    slug: '/usuario',
+    nombre: '/usuario',
     campos: [
       {
         tipo: TipoDeCampo.CAMPO_TEXTO,

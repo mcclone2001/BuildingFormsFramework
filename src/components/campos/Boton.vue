@@ -1,6 +1,6 @@
 <template>
   <Contenedor>
-    <b-button type="button" variant="primary">{{etiqueta}}</b-button>
+    <b-button type="button" variant="primary">{{d_etiqueta}}</b-button>
   </Contenedor>
 </template>
 
