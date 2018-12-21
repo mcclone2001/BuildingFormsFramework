@@ -16,7 +16,7 @@ export default class {
 
   ConstruirFormulario (definicionDeFormulario) {
     var formulario = {}
-    formulario.titulo = definicionDeFormulario.titulo
+    formulario.etiqueta = definicionDeFormulario.etiqueta
     formulario.campos = this.CrearCamposDesdeJSON(definicionDeFormulario.campos)
     return formulario
   }

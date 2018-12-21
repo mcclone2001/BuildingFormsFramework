@@ -6,7 +6,6 @@
         <b-list-group v-for="campo in d_campos" :key="campo">
           <b-list-group-item>
             {{ campo }}
-            { Preview }
             <b-button v-b-modal.modalAgregarCampo @click="definirTipoDeNuevoComponente(campo)">+</b-button>
           </b-list-group-item>
         </b-list-group>
@@ -27,7 +26,7 @@
   import DataForm from '@/classes/data/DataForm'
   import Form from '@/components/Form'
   import InterpreteJSON from '@/classes/InterpreteJSON'
-  
+
   import DefinicionFormularioAgregarCampo from '@/assets/Formularios/Editor/AgregarCampo'
   import DefinicionFormularioVacio from '@/assets/Formularios/Editor/PreviewVacio'
 
@@ -56,7 +55,7 @@
         var etiqueta = this.obtenerCampoDeNombre('etiqueta').obtenerValor()
         var evento = this.obtenerCampoDeNombre('evento').obtenerValor()
         var valor = this.obtenerCampoDeNombre('valor').obtenerValor()
-        this.d_formulario.parametros.campos.push({
+        this.agregarCampoAFormulario({
           tipo,
           parametros: {
             nombre,
@@ -72,6 +71,9 @@
       },
       definirTipoDeNuevoComponente: function (tipo) {
         this.d_tipo_de_nuevo_componente = tipo
+      },
+      agregarCampoAFormulario: function (campo) {
+        this.d_formulario.parametros.campos.push(campo)
       }
     }
   }
