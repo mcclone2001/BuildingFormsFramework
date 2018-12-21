@@ -5,16 +5,17 @@
 ## TO DO
 - [ ] Hacer un editor visual para la creacion de los formularios
 	- [ ] Refactorizar el editor para hacer codigo limpio
-		- [X] Crear DataForm
 		- [ ] ¿Cómo extraer los valores del form? (model?)
 		- [ ] Definir formularios para agregar campo para cada tipo de campo y hacerlo en archivos json que por convencion tengan nombre de archivo igual al tipo de campo (meterlos en assets)
-		- [ ] Que el contenido del popup se actualice dinamicamente
+		- [ ] Que el contenido del popup se actualice dinámicamente
+		- [X] Crear DataForm
 	- [ ] Crear componentes para edición/visualización de propiedades (que se ajuste a las necesidades de cada campo)
 	- [ ] Refactorizar modal de agregar campo para reusar componentes de edición/visualización de propiedades
 	- [ ] Crear clase abstracta de guardado
 	- [ ] Crear clase especifica de guardado en localstorage (https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
 	- [ ] Guardar formularios en localstorage
 - [ ] Hacer que la carga de los formularios pueda ocurrir de forma asincrona y que se vayan cacheando en memoria
+	- [ ] Definir un subsistema para crear y registrar componentes por convencion (tomandolos de una carpeta especificada por configuracion)
 - [ ] Expandir JSON de definicion de formularios (echar un ojo a XMLForms)
 - [ ] Definir JSON para describir la interaccion entre los formularios
 - [X] Renombrar/refactorizar classes/Props a algo mas apropiado (InterpreteJSON)

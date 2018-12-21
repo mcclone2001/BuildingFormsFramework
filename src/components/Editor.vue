@@ -27,6 +27,9 @@
   import DataForm from '@/classes/data/DataForm'
   import Form from '@/components/Form'
   import InterpreteJSON from '@/classes/InterpreteJSON'
+  
+  import DefinicionFormularioAgregarCampo from '@/assets/Formularios/Editor/AgregarCampo'
+  import DefinicionFormularioVacio from '@/assets/Formularios/Editor/PreviewVacio'
 
   var interpreteJSON = new InterpreteJSON()
 
@@ -36,57 +39,8 @@
       Form
     },
     data: function () {
-      var formularioVacio = new DataForm({
-        parametros: {
-          etiqueta: 'Preview',
-          nombre: '',
-          campos: []
-        }
-      })
-      var formularioAgregarCampo = new DataForm({
-        parametros: {
-          etiqueta: 'Agregar Campo',
-          nombre: '',
-          campos: [
-            {
-              tipo: TipoDeCampo.CAMPO_TEXTO,
-              parametros: {
-                nombre: 'nombre',
-                etiqueta: 'Nombre',
-                evento: 'CambioNombre',
-                valor: ''
-              }
-            },
-            {
-              tipo: TipoDeCampo.CAMPO_TEXTO,
-              parametros: {
-                nombre: 'etiqueta',
-                etiqueta: 'Etiqueta',
-                evento: 'CambioEtiqueta',
-                valor: ''
-              }
-            },
-            {
-              tipo: TipoDeCampo.CAMPO_TEXTO,
-              parametros: {
-                nombre: 'evento',
-                etiqueta: 'Evento',
-                evento: 'CambioEvento',
-                valor: ''
-              }
-            },
-            {
-              tipo: TipoDeCampo.CAMPO_TEXTO,
-              parametros: {
-                nombre: 'valor',
-                etiqueta: 'Valor',
-                evento: 'CambioValor',
-                valor: ''
-              }
-            }
-          ]
-        }
-      })
+      var formularioVacio = new DataForm(DefinicionFormularioVacio)
+      var formularioAgregarCampo = new DataForm(DefinicionFormularioAgregarCampo)
       return {
         d_campos: TipoDeCampo,
         d_formulario: formularioVacio,
